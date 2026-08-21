@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <strings.h>
 #include <time.h>
-#include <unistd.h>
 #include <curl/curl.h>
+#include "compat.h"
+#ifndef _WIN32
+#include <unistd.h>
+#endif
 #include "scanner.h"
 #include "notifier.h"
 #include "zara.h"

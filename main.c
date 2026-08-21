@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <strings.h>
 #include <signal.h>
 #include <pthread.h>
 #include <curl/curl.h>
+#include "compat.h"
 #include "scanner.h"
 #include "keywords.h"
 #include "zara.h"
@@ -256,8 +256,11 @@ static int site_selection(char *api_url_out, size_t api_url_size,
 }
 
 int main(void) {
+    platform_init();
     curl_global_init(CURL_GLOBAL_DEFAULT);
+#ifndef _WIN32
     signal(SIGCHLD, SIG_IGN);
+#endif
 
     print_banner();
     keywords_init(&g_keywords);

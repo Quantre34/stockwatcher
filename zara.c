@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "compat.h"
 #include "zara.h"
 
 /* ── Forward-declared so zara_fetch_sizes can call it ─────────────── */

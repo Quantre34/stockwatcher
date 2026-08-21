@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <strings.h>
+#include "compat.h"
 #include "keywords.h"
 
 void keywords_init(KeywordList *kl) {
