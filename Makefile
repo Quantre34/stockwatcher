@@ -8,7 +8,7 @@ OBJS = $(SRCS:.c=.o)
 
 ifeq ($(OS),Windows_NT)
     TARGET  = stockwatcher.exe
-    PFLAGS  = -lws2_32
+    PFLAGS  = -lpthread -lws2_32
     INSTALL = @echo "Kurulum: stockwatcher.exe dosyasini PATH icindeki bir klasore kopyalayin."
 else
     CC      = clang
